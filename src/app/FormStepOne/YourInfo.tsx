@@ -20,7 +20,6 @@ function YourInfo() {
      </div>
      
      
-     
     </>
   )
 }
