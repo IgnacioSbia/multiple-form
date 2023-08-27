@@ -31,7 +31,7 @@
   padding-bottom: 7%;
 }
 .formStep h4{
-  opacity: 0.5;
+  color: hsl(231, 11%, 63%);
 }
 .formStepButton{
   margin-right: 3%;
