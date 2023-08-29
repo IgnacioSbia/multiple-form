@@ -1,13 +1,23 @@
+'use client';
 import YourInfo from "./FormStepOne/YourInfo";
-
+import { useState } from 'react'
+import SelectPlan from "./PlanStepTwo/SelectPlan";
 
 export default function Home() {
+
+  const [currentStep, setCurrentStep] = useState<any>(0)
+
   return (
 
     <main className="mainForm">
      <aside className="formSteps">
       <div className="formStep">
-        <button className="formStepButton">1</button>
+        {
+          currentStep == 1 ? 
+         <button className="formStepButtonSelected">1</button>
+         : currentStep < 1? <button className="formStepButton">1</button> 
+         :<button></button>
+        }
         <aside>
           <h4>STEP 1</h4>
           <h1>YOUR INFO</h1>
@@ -36,8 +46,12 @@ export default function Home() {
       </div>
      </aside>
      <aside>
-      <YourInfo/>
-     </aside>
+      { currentStep == 1 ?
+       <YourInfo setCurrentStep= {setCurrentStep}/>
+       : currentStep == 2 ?<SelectPlan/>
+       :<a></a>
+      }  
+      </aside>
     </main>
   )
 }

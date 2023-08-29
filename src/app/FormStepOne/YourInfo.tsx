@@ -1,7 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './YourInfo.css'
 
-function YourInfo() {
+function YourInfo({setCurrentStep}:any) {
+   useEffect(()=>{
+      setCurrentStep(1)
+   },[1]);
+   const nextStep = ()=>{
+      setCurrentStep(2)
+   }
+
   return (
     <>
     <main className='yourInfo'>
@@ -19,7 +26,7 @@ function YourInfo() {
       <div>
          <input name='phone' placeholder='e.g +1 234 567 890' className='yourInfoInputs'/>
       </div>
-     
+      <button className='nextStepButton' onClick={nextStep}>Next Step</button>
      </main>
     </>
   )
