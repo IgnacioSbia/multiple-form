@@ -1,11 +1,18 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import './YourInfo.css'
 
 function YourInfo({setCurrentStep}:any) {
+   const [name, setName] = useState('');
+   const [email, setEmail] = useState('');
+   const [number, setNumber] = useState('');
+
    useEffect(()=>{
       setCurrentStep(1)
    },[1]);
    const nextStep = ()=>{
+      //Here should go the validation for the name,mail and phone number
+
+
       setCurrentStep(2)
    }
 

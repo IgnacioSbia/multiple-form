@@ -4,9 +4,18 @@ import { useState } from 'react'
 import SelectPlan from "./PlanStepTwo/SelectPlan";
 
 export default function Home() {
-
   const [currentStep, setCurrentStep] = useState<any>(0)
 
+
+  const handleStart = (step:any)=>{
+    if(step<1){
+      setCurrentStep(1)
+    }else{ 
+        alert('Woops, something went wrong!')
+        setCurrentStep(0)
+    }
+  }
+  console.log(currentStep)
   return (
 
     <main className="mainForm">
@@ -49,7 +58,10 @@ export default function Home() {
       { currentStep == 1 ?
        <YourInfo setCurrentStep= {setCurrentStep}/>
        : currentStep == 2 ?<SelectPlan/>
-       :<a></a>
+       :<>
+        <h1>Welcome!</h1>
+        <button className="buttonStartForm" onClick={()=>handleStart(0)}>Start</button>
+       </>
       }  
       </aside>
     </main>
