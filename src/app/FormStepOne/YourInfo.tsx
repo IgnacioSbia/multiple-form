@@ -5,13 +5,16 @@ function YourInfo({setCurrentStep}:any) {
    const [name, setName] = useState('');
    const [email, setEmail] = useState('');
    const [number, setNumber] = useState('');
+   const nameReg = /^[a-z ,.'-]+$/i
 
    useEffect(()=>{
       setCurrentStep(1)
    },[1]);
    const nextStep = ()=>{
       //Here should go the validation for the name,mail and phone number
-
+      if(nameReg.test(name)){
+         console.log("true")
+      }
 
       setCurrentStep(2)
    }
