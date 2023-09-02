@@ -18,6 +18,7 @@ function YourInfo({setCurrentStep}:any) {
 
       setCurrentStep(2)
    }
+   console.log(email)
 
   return (
     <>
@@ -26,15 +27,15 @@ function YourInfo({setCurrentStep}:any) {
       <p className='yourInfoSubTitle'>Please provide your name, email adress, and phone number</p>
       <label className='personalInfoLabel'>Name</label>
       <div>
-         <input name='Name' placeholder='e.g Stephen King' className='yourInfoInputs'/>
+         <input name='Name' placeholder='e.g Stephen King' className='yourInfoInputs' onChange={(e)=>setName(e.target.value)}/>
       </div>
       <label className='personalInfoLabel'>Email Adress</label>
       <div>
-         <input name='email' placeholder='e.g stephenking@lorem.com' className='yourInfoInputs'/>
+         <input name='email' placeholder='e.g stephenking@lorem.com' className='yourInfoInputs' value={email} onChange={(e)=>setEmail(e.target.value)}/>
       </div>
       <label className='personalInfoLabel'>Phone Number</label>
       <div>
-         <input name='phone' placeholder='e.g +1 234 567 890' className='yourInfoInputs'/>
+         <input name='phone' placeholder='e.g +1 234 567 890' className='yourInfoInputs' onChange={(e)=>setNumber(e.target.value)}/>
       </div>
       <button className='nextStepButton' onClick={nextStep}>Next Step</button>
      </main>
