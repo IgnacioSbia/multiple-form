@@ -6,17 +6,30 @@ function YourInfo({setCurrentStep}:any) {
    const [email, setEmail] = useState('');
    const [number, setNumber] = useState('');
    const nameReg = /^[a-z ,.'-]+$/i
+   const emailReg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+   const phoneReg = /^\d+$/
+   const [emailErr, setEmailErr] = useState<String>();
+   const [nameErr, setNameErr] = useState<String>();
+   const [phoneErr, setPhoneErr] = useState<String>();
 
    useEffect(()=>{
       setCurrentStep(1)
    },[1]);
    const nextStep = ()=>{
       //Here should go the validation for the name,mail and phone number
-      if(nameReg.test(name)){
-         console.log("true")
+      if(nameReg.test(name) && emailReg.test(email) && phoneReg.test(number)){
+         setCurrentStep(2)
+         setEmailErr('');
+         setNameErr('');
+         setPhoneErr('');
+      }else if(email == ''){
+         setEmailErr('This field is required')
+      }else{
+         
       }
+      
 
-      setCurrentStep(2)
+     
    }
    console.log(email)
 
@@ -31,6 +44,7 @@ function YourInfo({setCurrentStep}:any) {
       </div>
       <label className='personalInfoLabel'>Email Adress</label>
       <div>
+         <p>{emailErr}</p>
          <input name='email' placeholder='e.g stephenking@lorem.com' className='yourInfoInputs' value={email} onChange={(e)=>setEmail(e.target.value)}/>
       </div>
       <label className='personalInfoLabel'>Phone Number</label>
