@@ -36,3 +36,12 @@
     color: white;
     font-size: 16px;
 }
+.personalInfoEmailError{
+    display: flex;
+    justify-content: flex-end;
+    font-size: 15px;
+    color: hsl(354, 84%, 57%);
+}
+#yourInfoInputsError{
+    border: 1px solid hsl(354, 84%, 57%) ;
+  }

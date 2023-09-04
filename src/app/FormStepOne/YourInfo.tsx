@@ -44,8 +44,8 @@ function YourInfo({setCurrentStep}:any) {
       </div>
       <label className='personalInfoLabel'>Email Adress</label>
       <div>
-         <p>{emailErr}</p>
-         <input name='email' placeholder='e.g stephenking@lorem.com' className='yourInfoInputs' value={email} onChange={(e)=>setEmail(e.target.value)}/>
+         <p className='personalInfoEmailError'>{emailErr}</p>
+         <input name='email' placeholder='e.g stephenking@lorem.com' className='yourInfoInputs' id={ emailErr == 'This field is required' ? 'yourInfoInputsError' : '' } value={email} onChange={(e)=>setEmail(e.target.value)}/>
       </div>
       <label className='personalInfoLabel'>Phone Number</label>
       <div>
