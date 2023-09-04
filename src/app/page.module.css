@@ -1,3 +1,17 @@
+@font-face {
+  font-family: ubuntuBold;
+  src: url('../fonts/Ubuntu-Bold.ttf');
+}
+@font-face {
+  font-family: ubuntuMedium;
+  src: url('../fonts/Ubuntu-Medium.ttf');
+}
+@font-face {
+  font-family: ubuntuRegular;
+  src: url('../fonts/Ubuntu-Regular.ttf');
+}
+
+
 .main {
   display: flex;
   flex-direction: column;

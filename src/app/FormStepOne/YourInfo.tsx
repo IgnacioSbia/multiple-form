@@ -9,8 +9,7 @@ function YourInfo({setCurrentStep}:any) {
    const emailReg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
    const phoneReg = /^\d+$/
    const [emailErr, setEmailErr] = useState<String>();
-   const [nameErr, setNameErr] = useState<String>();
-   const [phoneErr, setPhoneErr] = useState<String>();
+
 
    useEffect(()=>{
       setCurrentStep(1)
@@ -20,8 +19,6 @@ function YourInfo({setCurrentStep}:any) {
       if(nameReg.test(name) && emailReg.test(email) && phoneReg.test(number)){
          setCurrentStep(2)
          setEmailErr('');
-         setNameErr('');
-         setPhoneErr('');
       }else if(email == ''){
          setEmailErr('This field is required')
       }else{

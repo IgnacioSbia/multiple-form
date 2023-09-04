@@ -1,3 +1,16 @@
+@font-face {
+    font-family: 'ubuntuBold';
+    src: url('../../fonts/Ubuntu-Bold.ttf');
+  }
+  @font-face {
+    font-family: 'ubuntuMedium';
+    src: url('../../fonts/Ubuntu-Medium.ttf');
+  }
+  @font-face {
+    font-family: 'ubuntuRegular';
+    src: url('../../fonts/Ubuntu-Regular.ttf');
+  }
+  
 .personalInfoLabel{
     font-size: 16px;
     color: hsl(213, 96%, 18%);
@@ -7,9 +20,11 @@
     padding: 2%;
 }
 .yourInfoTitle{
+    font-family:'ubuntuBold';
     padding-bottom: 2%;
 }
 .yourInfoSubTitle{
+    font-family: 'ubuntuMedium';
     color: hsl(231, 11%, 63%);
     padding-bottom: 10%;
 }
@@ -38,6 +53,7 @@
 }
 .personalInfoEmailError{
     display: flex;
+    padding-left: 18%;
     justify-content: flex-end;
     font-size: 15px;
     color: hsl(354, 84%, 57%);
