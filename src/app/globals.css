@@ -1,3 +1,16 @@
+@font-face {
+  font-family: ubuntuBold;
+  src: url('../fonts/Ubuntu-Bold.ttf');
+}
+@font-face {
+  font-family: ubuntuMedium;
+  src: url('../fonts/Ubuntu-Medium.ttf');
+}
+@font-face {
+  font-family: ubuntuRegular;
+  src: url('../fonts/Ubuntu-Regular.ttf');
+}
+
 *{
   padding: 0;
   margin: 0;
@@ -13,6 +26,7 @@
  padding: 0.8%;
 }
 .formSteps{
+  font-family: 'ubuntuRegular';
   border-radius: 10px;
   width: 25%;
   padding: 2%;

@@ -1,7 +1,9 @@
 'use client';
 import YourInfo from "./FormStepOne/YourInfo";
-import { useState } from 'react'
+import { useState } from 'react';
 import SelectPlan from "./PlanStepTwo/SelectPlan";
+import checkedButton from '../../public/checkedStep.svg';
+import Image from "next/image";
 
 export default function Home() {
   const [currentStep, setCurrentStep] = useState<any>(0)
@@ -25,7 +27,7 @@ export default function Home() {
           currentStep == 1 ? 
          <button className="formStepButtonSelected">1</button>
          : currentStep < 1? <button className="formStepButton">1</button> 
-         :<button></button>
+         :<button className="formStepButton"><Image src={checkedButton} width={25} height={28} alt="checked"/></button>
         }
         <aside>
           <h4>STEP 1</h4>
@@ -33,7 +35,10 @@ export default function Home() {
         </aside> 
       </div>
       <div className="formStep">
-        <button className="formStepButton">2</button>
+        {
+          <button className="formStepButton">2</button>
+        }
+        
         <aside>
           <h4>STEP 2</h4>
           <h1>SELECT PLAN</h1>
