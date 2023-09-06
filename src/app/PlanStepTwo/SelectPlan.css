@@ -1,0 +1,10 @@
+.selectPlanCard{
+    border: 1px solid black;
+    width: 21%;
+    padding: 2%;
+}
+.planCards{
+    margin-top: 20%;
+    display: flex;
+    justify-content: space-between;
+}

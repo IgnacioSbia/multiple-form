@@ -36,7 +36,10 @@ export default function Home() {
       </div>
       <div className="formStep">
         {
-          <button className="formStepButton">2</button>
+          currentStep == 2 ? 
+          <button className="formStepButtonSelected">2</button>
+          : currentStep <2 ?  <button className="formStepButton">2</button>
+          : <button className="formStepButton"><Image src={checkedButton} width={25} height={28} alt="checked"/></button>
         }
         
         <aside>
