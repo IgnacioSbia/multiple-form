@@ -65,7 +65,7 @@ export default function Home() {
      <aside>
       { currentStep == 1 ?
        <YourInfo setCurrentStep= {setCurrentStep}/>
-       : currentStep == 2 ?<SelectPlan/>
+       : currentStep == 2 ?<SelectPlan setCurrentStep ={setCurrentStep}/>
        :<>
         <h1>Welcome!</h1>
         <button className="buttonStartForm" onClick={()=>handleStart(0)}>Start</button>
