@@ -30,13 +30,23 @@ function SelectPlan({setCurrentStep}:any) {
             <p>$9/mo</p>
           </div>  
         </div>
-        <div className='selectPlanCard' onClick={()=>setSelectedPlan('AdvancedMonthly')}>
+        { selectedPlan == 'AdvancedMonthly' ?
+          <div className='selectPlanCardSelected' onClick={()=>setSelectedPlan('AdvancedMonthly')}>
           <Image src={advanced} width={34} height={34} alt='planTwoImage'/>
           <div>
             <h4>Advanced</h4>
             <p>$12/mo</p>
           </div>
         </div>
+         :
+        <div className='selectPlanCard' onClick={()=>setSelectedPlan('AdvancedMonthly')}>
+        <Image src={advanced} width={34} height={34} alt='planTwoImage'/>
+        <div>
+          <h4>Advanced</h4>
+          <p>$12/mo</p>
+        </div>
+      </div>
+        }
         <div className='selectPlanCard' onClick={()=>setSelectedPlan('ProMonthly')}>
           <Image src={pro} width={34} height={34} alt='planThreeImage'/>
           <div>
