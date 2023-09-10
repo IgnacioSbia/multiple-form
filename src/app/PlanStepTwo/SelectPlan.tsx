@@ -23,6 +23,15 @@ function SelectPlan({setCurrentStep}:any) {
         <p>You have the option of monthly or yearly billing</p>
       </aside>
       <section className='planCards'>
+        { selectedPlan == 'ArcadeMonthly' ? 
+          <div className='selectPlanCardSelected' onClick={()=>setSelectedPlan('ArcadeMonthly')}>
+          <Image src={arcade} alt='planOneImage' width={34} height={34}/>
+          <div >
+            <h4>Arcade</h4>
+            <p>$9/mo</p>
+          </div>  
+        </div>
+        :
         <div className='selectPlanCard' onClick={()=>setSelectedPlan('ArcadeMonthly')}>
           <Image src={arcade} alt='planOneImage' width={34} height={34}/>
           <div >
@@ -30,6 +39,8 @@ function SelectPlan({setCurrentStep}:any) {
             <p>$9/mo</p>
           </div>  
         </div>
+
+        }
         { selectedPlan == 'AdvancedMonthly' ?
           <div className='selectPlanCardSelected' onClick={()=>setSelectedPlan('AdvancedMonthly')}>
           <Image src={advanced} width={34} height={34} alt='planTwoImage'/>
@@ -47,6 +58,15 @@ function SelectPlan({setCurrentStep}:any) {
         </div>
       </div>
         }
+        { selectedPlan == 'ProMonthly'?
+        <div className='selectPlanCardSelected' onClick={()=>setSelectedPlan('ProMonthly')}>
+          <Image src={pro} width={34} height={34} alt='planThreeImage'/>
+          <div>
+            <h4>Pro</h4>
+            <p>$15/mo</p>
+          </div>
+        </div>
+        :
         <div className='selectPlanCard' onClick={()=>setSelectedPlan('ProMonthly')}>
           <Image src={pro} width={34} height={34} alt='planThreeImage'/>
           <div>
@@ -54,7 +74,11 @@ function SelectPlan({setCurrentStep}:any) {
             <p>$15/mo</p>
           </div>
         </div>
+        }
       </section>
+      <aside>
+        
+      </aside>
       <aside className='selectPlanButtons'>
         <button className='selectPlanGoBackStep'>Go Back</button>
         <button className='selectPlanNextStepButton'>Next Step</button>
