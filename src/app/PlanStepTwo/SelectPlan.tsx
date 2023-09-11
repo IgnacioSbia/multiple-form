@@ -8,10 +8,18 @@ import './SelectPlan.css';
 function SelectPlan({setCurrentStep}:any) {
 
   const [selectedPlan, setSelectedPlan] = useState<String>('')
-  
+  const [durationPlan, setDurationPlan] = useState<String>('Monthly')
+
   const handleStep = ()=>{
     if(selectedPlan){
       setCurrentStep(3)
+    }
+  }
+  const handleDuration = (duration:any)=>{
+    if(duration.target.checked){
+      setDurationPlan('Yearly');
+    }else{
+      setDurationPlan('Monthly')
     }
   }
 
@@ -22,7 +30,10 @@ function SelectPlan({setCurrentStep}:any) {
         <h1>Select your Plan</h1>
         <p>You have the option of monthly or yearly billing</p>
       </aside>
+      {
+        durationPlan == 'Monthly' ?
       <section className='planCards'>
+      
         { selectedPlan == 'ArcadeMonthly' ? 
           <div className='selectPlanCardSelected' onClick={()=>setSelectedPlan('ArcadeMonthly')}>
           <Image src={arcade} alt='planOneImage' width={34} height={34}/>
@@ -76,8 +87,77 @@ function SelectPlan({setCurrentStep}:any) {
         </div>
         }
       </section>
-      <aside>
-        
+      : durationPlan == 'Yearly' ? 
+      <section className='planCards'>
+      
+        { selectedPlan == 'ArcadeYearly' ? 
+          <div className='selectPlanCardSelected' onClick={()=>setSelectedPlan('ArcadeYearly')}>
+          <Image src={arcade} alt='planOneImage' width={34} height={34}/>
+          <div >
+            <h4>Arcade</h4>
+            <p>$90/yr</p>
+            <p className='selectPlanMonthsFree'>2 months free</p>
+          </div>  
+        </div>
+        :
+        <div className='selectPlanCard' onClick={()=>setSelectedPlan('ArcadeYearly')}>
+          <Image src={arcade} alt='planOneImage' width={34} height={34}/>
+          <div >
+            <h4>Arcade</h4>
+            <p>$90/yr</p>
+            <p className='selectPlanMonthsFree'>2 months free</p>
+          </div>  
+        </div>
+
+        }
+        { selectedPlan == 'AdvancedYearly' ?
+          <div className='selectPlanCardSelected' onClick={()=>setSelectedPlan('AdvancedYearly')}>
+          <Image src={advanced} width={34} height={34} alt='planTwoImage'/>
+          <div>
+            <h4>Advanced</h4>
+            <p>$120/yr</p>
+            <p className='selectPlanMonthsFree'> 2 months free</p>
+          </div>
+        </div>
+         :
+        <div className='selectPlanCard' onClick={()=>setSelectedPlan('AdvancedYearly')}>
+        <Image src={advanced} width={34} height={34} alt='planTwoImage'/>
+        <div>
+          <h4>Advanced</h4>
+          <p>$120/yr</p>
+          <p className='selectPlanMonthsFree'>2 months free</p>
+        </div>
+      </div>
+        }
+        { selectedPlan == 'ProYearly'?
+        <div className='selectPlanCardSelected' onClick={()=>setSelectedPlan('ProYearly')}>
+          <Image src={pro} width={34} height={34} alt='planThreeImage'/>
+          <div>
+            <h4>Pro</h4>
+            <p>$150/yr</p>
+            <p className='selectPlanMonthsFree'>2 months free</p>
+          </div>
+        </div>
+        :
+        <div className='selectPlanCard' onClick={()=>setSelectedPlan('ProYearly')}>
+          <Image src={pro} width={34} height={34} alt='planThreeImage'/>
+          <div>
+            <h4>Pro</h4>
+            <p>$150/yr</p>
+            <p className='selectPlanMonthsFree'>2 months free</p>
+          </div>
+        </div>
+        }
+      </section>
+      : <></>
+      }
+      <aside className='selectPlanYrlyMonthly'>
+        <p>Monthly</p>
+        <label className="selectPlanDuration" >
+          <input type="checkbox" onClick={(e)=>handleDuration(e)}/>
+          <span className="slider round"></span>
+        </label>
+        <p>Yearly</p>
       </aside>
       <aside className='selectPlanButtons'>
         <button className='selectPlanGoBackStep'>Go Back</button>
