@@ -16,6 +16,7 @@ function SelectPlan({setCurrentStep}:any) {
     }
   }
   const handleDuration = (duration:any)=>{
+    setSelectedPlan('')
     if(duration.target.checked){
       setDurationPlan('Yearly');
     }else{
@@ -152,12 +153,12 @@ function SelectPlan({setCurrentStep}:any) {
       : <></>
       }
       <aside className='selectPlanYrlyMonthly'>
-        <p>Monthly</p>
+        <p className='selectPlanMonthlyToggle' id={durationPlan == 'Monthly' ? 'selectPlanMonthlyToggleSelected': ''}>Monthly</p>
         <label className="selectPlanDuration" >
           <input type="checkbox" onClick={(e)=>handleDuration(e)}/>
           <span className="slider round"></span>
         </label>
-        <p>Yearly</p>
+        <p className='selectPlanYearlyToggle' id={durationPlan == 'Yearly' ? 'selectPlanYearlyToggleSelected': ''}>Yearly</p>
       </aside>
       <aside className='selectPlanButtons'>
         <button className='selectPlanGoBackStep'>Go Back</button>

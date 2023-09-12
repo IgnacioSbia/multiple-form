@@ -135,3 +135,13 @@
     font-size: 12px;
     color: hsl(213, 96%, 18%);
   }
+  .selectPlanMonthlyToggle{
+    color:  hsl(229, 24%, 87%);
+    font-family: 'ubuntuRegular';
+    padding-right: 1%;
+  }
+  .selectPlanYearlyToggle{
+    color:  hsl(229, 24%, 87%);
+    padding-left: 1%;
+    font-family: 'ubuntuRegular';
+  }
