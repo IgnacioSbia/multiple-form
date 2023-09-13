@@ -91,7 +91,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
+    background-color: #2196F3;
     -webkit-transition: .4s;
     transition: .4s;
   }
@@ -144,4 +144,12 @@
     color:  hsl(229, 24%, 87%);
     padding-left: 1%;
     font-family: 'ubuntuRegular';
+  }
+  #selectPlanMonthlyToggleSelected{
+    font-family: 'ubuntuBold';
+    color: hsl(213, 96%, 18%);
+  }
+  #selectPlanYearlyToggleSelected{
+    font-family: 'ubuntuBold';
+    color: hsl(213, 96%, 18%);
   }

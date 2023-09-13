@@ -4,6 +4,7 @@ import { useState } from 'react';
 import SelectPlan from "./PlanStepTwo/SelectPlan";
 import checkedButton from '../../public/checkedStep.svg';
 import Image from "next/image";
+import Addons from "./AddOnsStepThree/Addons";
 
 export default function Home() {
   const [currentStep, setCurrentStep] = useState<any>(0)
@@ -66,7 +67,9 @@ export default function Home() {
       { currentStep == 1 ?
        <YourInfo setCurrentStep= {setCurrentStep}/>
        : currentStep == 2 ?<SelectPlan setCurrentStep ={setCurrentStep}/>
-       :<>
+       : currentStep == 3 ?<Addons/>
+       :
+       <>
         <h1>Welcome!</h1>
         <button className="buttonStartForm" onClick={()=>handleStart(0)}>Start</button>
        </>

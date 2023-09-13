@@ -7,12 +7,14 @@ import './SelectPlan.css';
 
 function SelectPlan({setCurrentStep}:any) {
 
-  const [selectedPlan, setSelectedPlan] = useState<String>('')
+  const [selectedPlan, setSelectedPlan] = useState<String>()
   const [durationPlan, setDurationPlan] = useState<String>('Monthly')
 
-  const handleStep = ()=>{
-    if(selectedPlan){
+  const handleStep = (step:any)=>{
+    if(selectedPlan && step == 1){
       setCurrentStep(3)
+    }else if(selectedPlan || selectedPlan == null && step == 0){
+      setCurrentStep(1)
     }
   }
   const handleDuration = (duration:any)=>{
@@ -161,8 +163,8 @@ function SelectPlan({setCurrentStep}:any) {
         <p className='selectPlanYearlyToggle' id={durationPlan == 'Yearly' ? 'selectPlanYearlyToggleSelected': ''}>Yearly</p>
       </aside>
       <aside className='selectPlanButtons'>
-        <button className='selectPlanGoBackStep'>Go Back</button>
-        <button className='selectPlanNextStepButton'>Next Step</button>
+        <button className='selectPlanGoBackStep' onClick={()=>handleStep(0)}>Go Back</button>
+        <button className='selectPlanNextStepButton'onClick={()=>handleStep(1)}>Next Step</button>
       </aside>
     </main>
   )
