@@ -12,6 +12,7 @@ function SelectPlan({setCurrentStep}:any) {
 
   const handleStep = (step:any)=>{
     if(selectedPlan && step == 1){
+      localStorage.setItem('duration',durationPlan.toString());
       setCurrentStep(3)
     }else if(selectedPlan || selectedPlan == null && step == 0){
       setCurrentStep(1)
@@ -22,7 +23,7 @@ function SelectPlan({setCurrentStep}:any) {
     if(duration.target.checked){
       setDurationPlan('Yearly');
     }else{
-      setDurationPlan('Monthly')
+      setDurationPlan('Monthly');
     }
   }
 

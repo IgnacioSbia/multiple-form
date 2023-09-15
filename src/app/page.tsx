@@ -7,7 +7,7 @@ import Image from "next/image";
 import Addons from "./AddOnsStepThree/Addons";
 
 export default function Home() {
-  const [currentStep, setCurrentStep] = useState<any>(0)
+  const [currentStep, setCurrentStep] = useState<any>(0);
 
 
   const handleStart = (step:any)=>{
