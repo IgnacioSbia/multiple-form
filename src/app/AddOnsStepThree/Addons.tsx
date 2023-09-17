@@ -7,15 +7,15 @@ function Addons() {
 
 
   const handleAddons = (check:any)=>{
-    const addons:any = []
-    if(check.target.checked){
-      addons.push(check.target.name)
-      setSelectedAddons([...addons, ...selectedAddons])
-    }else if(check.target.checked == false){
-      const updatedAddon = addons.filter((addon:any) => addon == check.target.name)
-      setSelectedAddons(updatedAddon)
-      console.log(updatedAddon)
-    
+    const addonName = check.target.name;
+
+    if (check.target.checked) {
+      // If checkbox is checked, add the addon to selectedAddons
+      setSelectedAddons([...selectedAddons, addonName]);
+    } else {
+      // If checkbox is unchecked, remove the addon from selectedAddons
+      const updatedAddons = selectedAddons.filter((addon: any) => addon !== addonName);
+      setSelectedAddons(updatedAddons);
     }
   }
   console.log(selectedAddons)
@@ -33,7 +33,7 @@ function Addons() {
           <p className='addonsPrice'>+$1/mo</p>
         </div>
         <div className='selectAddonsCells'>
-          <input type='checkbox' className='addonCheckbox' name='Larger storage Monthly' onClick={(e)=>handleAddons(e)}/>
+          <input type='checkbox' className='addonCheckbox' name='Larger Storage Monthly' onClick={(e)=>handleAddons(e)}/>
           <aside className='selectAddonsTitles'>
           <h2 className='addonTitle'>Larger storage</h2>
           <p className='addonSubTitle'>Extra 1TB of cloud save</p>
@@ -41,7 +41,7 @@ function Addons() {
           <p className='addonsPrice'>+$2/mo</p>
         </div>
         <div className='selectAddonsCells'>
-          <input type='checkbox' className='addonCheckbox'/>
+          <input type='checkbox' className='addonCheckbox' name='Customizable Profile Monthly' onClick={(e)=>handleAddons(e)}/>
           <aside className='selectAddonsTitles'>
           <h2 className='addonTitle'>Customizable Profile</h2>
           <p className='addonSubTitle'>Custom theme on your profile</p>
@@ -56,7 +56,7 @@ function Addons() {
         : selectedPlan == 'Yearly' ? 
         <>
         <div className='selectAddonsCells' id=''>
-          <input type='checkbox' className='addonCheckbox'/>
+          <input type='checkbox' className='addonCheckbox' name='Online Services Yearly' onClick={(e)=>handleAddons(e)}/>
           <aside className='selectAddonsTitles'>
           <h2 className='addonTitle'>Online Services</h2>
           <p className='addonSubTitle'>Acccess to multiplayer games</p>
@@ -64,20 +64,20 @@ function Addons() {
           <p className='addonsPrice'>+$10/yr</p>
         </div>
         <div className='selectAddonsCells'>
-          <input type='checkbox' className='addonCheckbox'/>
+          <input type='checkbox' className='addonCheckbox' name='Larger Storage Yearly' onClick={(e)=>handleAddons(e)}/>
           <aside className='selectAddonsTitles'>
-          <h2 className='addonTitle'>Online Services</h2>
-          <p className='addonSubTitle'>Acccess to multiplayer games</p>
+          <h2 className='addonTitle'>Larger Storage</h2>
+          <p className='addonSubTitle'>Extra 1TB of cloud save</p>
           </aside>
-          <p className='addonsPrice'>+$20/mo</p>
+          <p className='addonsPrice'>+$20/yr</p>
         </div>
         <div className='selectAddonsCells'>
-          <input type='checkbox' className='addonCheckbox'/>
+          <input type='checkbox' className='addonCheckbox' name='Customizable Profile Yearly' onClick={(e)=>handleAddons(e)}/>
           <aside className='selectAddonsTitles'>
-          <h2 className='addonTitle'>Online Services</h2>
-          <p className='addonSubTitle'>Acccess to multiplayer games</p>
+          <h2 className='addonTitle'>Customizable Profile</h2>
+          <p className='addonSubTitle'>Custom theme on your profile</p>
           </aside>
-          <p className='addonsPrice'>+$1/mo</p>
+          <p className='addonsPrice'>+$20/yr</p>
         </div>
         <aside className='selectAddonsButtonSection'>
           <button className='addonsGoBackButton'>Go back</button>
