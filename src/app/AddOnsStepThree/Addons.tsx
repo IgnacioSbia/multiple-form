@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './Addons.css';
 
-function Addons() {
+function Addons({setCurrentStep}:any) {
   const [selectedAddons, setSelectedAddons] = useState<any>([])
   const selectedPlan = localStorage.getItem('duration');
 
@@ -17,6 +17,12 @@ function Addons() {
       const updatedAddons = selectedAddons.filter((addon: any) => addon !== addonName);
       setSelectedAddons(updatedAddons);
     }
+  }
+  const handleStep = (option:any)=>{
+    if(option ==1){
+      setCurrentStep(4)
+    }
+    
   }
   console.log(selectedAddons)
 

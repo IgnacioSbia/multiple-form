@@ -49,7 +49,12 @@ export default function Home() {
         </aside>
       </div> 
       <div className="formStep">
-        <button className="formStepButton">3</button>
+      {
+          currentStep == 3 ? 
+          <button className="formStepButtonSelected">3</button>
+          : currentStep <3 ?  <button className="formStepButton">3</button>
+          : <button className="formStepButton"><Image src={checkedButton} width={25} height={28} alt="checked"/></button>
+        }
         <aside>
           <h4>STEP 3</h4>
           <h1>ADD-ONS</h1>  
@@ -67,7 +72,7 @@ export default function Home() {
       { currentStep == 1 ?
        <YourInfo setCurrentStep= {setCurrentStep}/>
        : currentStep == 2 ?<SelectPlan setCurrentStep ={setCurrentStep}/>
-       : currentStep == 3 ?<Addons/>
+       : currentStep == 3 ?<Addons setCurrentStep ={setCurrentStep}/>
        :
        <>
         <h1>Welcome!</h1>
