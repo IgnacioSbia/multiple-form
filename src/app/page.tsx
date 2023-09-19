@@ -5,6 +5,7 @@ import SelectPlan from "./PlanStepTwo/SelectPlan";
 import checkedButton from '../../public/checkedStep.svg';
 import Image from "next/image";
 import Addons from "./AddOnsStepThree/Addons";
+import Summary from "./SummaryStepFour/Summary";
 
 export default function Home() {
   const [currentStep, setCurrentStep] = useState<any>(0);
@@ -61,7 +62,12 @@ export default function Home() {
         </aside> 
       </div> 
       <div className="formStep">
-        <button className="formStepButton">4</button>
+        {
+          currentStep == 4 ?
+          <button className="formStepButtonSelected">4</button>
+          : currentStep <3 ?  <button className="formStepButton">4</button>
+          : <button className="formStepButton"><Image src={checkedButton} width={25} height={28} alt="checked"/></button>
+        }
         <aside>
           <h4>STEP 4</h4>
           <h1>SUMMARY</h1>
@@ -73,6 +79,7 @@ export default function Home() {
        <YourInfo setCurrentStep= {setCurrentStep}/>
        : currentStep == 2 ?<SelectPlan setCurrentStep ={setCurrentStep}/>
        : currentStep == 3 ?<Addons setCurrentStep ={setCurrentStep}/>
+       : currentStep == 4 ?<Summary/>
        :
        <>
         <h1>Welcome!</h1>

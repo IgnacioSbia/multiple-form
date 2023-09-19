@@ -19,8 +19,10 @@ function Addons({setCurrentStep}:any) {
     }
   }
   const handleStep = (option:any)=>{
-    if(option ==1){
+    if(option == 1){
       setCurrentStep(4)
+    }else if(option == 0){
+      setCurrentStep(3)
     }
     
   }
@@ -55,8 +57,8 @@ function Addons({setCurrentStep}:any) {
           <p className='addonsPrice'>+$2/mo</p>
         </div>
         <aside className='selectAddonsButtonSection'>
-          <button className='addonsGoBackButton'>Go back</button>
-          <button className='addonsNextStepButton'>Next Step</button>
+          <button className='addonsGoBackButton' onClick={()=>handleStep(0)}>Go back</button>
+          <button className='addonsNextStepButton' onClick={()=>handleStep(1)}>Next Step</button>
         </aside>
       </>
         : selectedPlan == 'Yearly' ? 
@@ -86,8 +88,8 @@ function Addons({setCurrentStep}:any) {
           <p className='addonsPrice'>+$20/yr</p>
         </div>
         <aside className='selectAddonsButtonSection'>
-          <button className='addonsGoBackButton'>Go back</button>
-          <button className='addonsNextStepButton'>Next Step</button>
+          <button className='addonsGoBackButton' onClick={()=>handleStep(0)}>Go back</button>
+          <button className='addonsNextStepButton' onClick={()=>handleStep(1)}>Next Step</button>
         </aside>
       </>
       : ''
