@@ -17,7 +17,7 @@ function Summary() {
             <aside>
               <p>Online Services</p>
               <p>Larger Storage</p>  
-            </aside>   
+            </aside>  ++
             
         </section>        
         <aside>
