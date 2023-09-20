@@ -10,16 +10,19 @@ function Summary() {
         <section className='summaryDetails'>
             <aside className='summaryPlanType'>
               <h1>Arcade(Yearly)</h1>
-              <button>change</button>
+              <button className='summaryButton'>change</button>
 
             </aside>
                 <hr/>
             <aside>
-              <h3>Total(per year)</h3>
-            </aside>    
+              <p>Online Services</p>
+              <p>Larger Storage</p>  
+            </aside>   
             
         </section>        
-
+        <aside>
+              <h3>Total(per year)</h3>
+            </aside> 
 
     </main>
   )
