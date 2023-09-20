@@ -1,5 +1,5 @@
 import React from 'react'
-
+import './Summary.css'
 function Summary() {
   return (
     <main>
@@ -8,12 +8,14 @@ function Summary() {
             <p className='summarySubTitle'>Double-check everything looks OK before confirming.</p>
         </div>
         <section className='summaryDetails'>
-            <aside>
+            <aside className='summaryPlanType'>
+              <h1>Arcade(Yearly)</h1>
+              <button>change</button>
 
             </aside>
                 <hr/>
             <aside>
-
+              <h3>Total(per year)</h3>
             </aside>    
             
         </section>        
