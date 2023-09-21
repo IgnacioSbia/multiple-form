@@ -5,3 +5,8 @@
 .summaryButton{
     width: 20%;
 }
+.summaryAddons{
+    color: hsl(231, 11%, 63%);
+    display: flex;
+    justify-content: space-between;
+}

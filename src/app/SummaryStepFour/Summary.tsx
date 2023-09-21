@@ -15,9 +15,15 @@ function Summary() {
             </aside>
                 <hr/>
             <aside>
-              <p>Online Services</p>
-              <p>Larger Storage</p>  
-            </aside>  ++
+              <div className='summaryAddons'>
+                <p>Online Services</p>
+                <p>+$10/ye</p>
+              </div>
+              <div className='summaryAddons'>
+                <p>Larger Storage</p>
+                <p>+10/ye</p>
+              </div>  
+            </aside>
             
         </section>        
         <aside>
