@@ -6,7 +6,18 @@
     width: 20%;
 }
 .summaryAddons{
-    color: hsl(231, 11%, 63%);
+    font-family: 'ubuntuRegular';
+    color: hsl(231, 11%, 33%);
     display: flex;
     justify-content: space-between;
+}
+.summaryDetails{
+    
+    background-color: hsl(231, 11%, 85%);
+    border-radius: 15px;
+    padding: 1%;
+
+}
+.summaryPlanType{
+    margin-bottom: 1%;
 }
