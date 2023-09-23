@@ -1,6 +1,6 @@
 'use client';
 import YourInfo from "./FormStepOne/YourInfo";
-import { useState } from 'react';
+import { use, useState } from 'react';
 import SelectPlan from "./PlanStepTwo/SelectPlan";
 import checkedButton from '../../public/checkedStep.svg';
 import Image from "next/image";
@@ -9,7 +9,7 @@ import Summary from "./SummaryStepFour/Summary";
 
 export default function Home() {
   const [currentStep, setCurrentStep] = useState<any>(0);
-
+  const [choosenAddons, setChoosenAddons] = useState([])
 
   const handleStart = (step:any)=>{
     if(step<1){
@@ -78,8 +78,8 @@ export default function Home() {
       { currentStep == 1 ?
        <YourInfo setCurrentStep= {setCurrentStep}/>
        : currentStep == 2 ?<SelectPlan setCurrentStep ={setCurrentStep}/>
-       : currentStep == 3 ?<Addons setCurrentStep ={setCurrentStep}/>
-       : currentStep == 4 ?<Summary/>
+       : currentStep == 3 ?<Addons setCurrentStep ={setCurrentStep} setChoosenAddons ={setChoosenAddons}/>
+       : currentStep == 4 ?<Summary choosenAddons={choosenAddons}/>
        :
        <>
         <h1>Welcome!</h1>

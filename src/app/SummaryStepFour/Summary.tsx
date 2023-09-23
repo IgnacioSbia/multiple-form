@@ -1,6 +1,7 @@
 import React from 'react'
 import './Summary.css'
-function Summary() {
+function Summary({choosenAddons}:any) {
+  
   return (
     <main>
         <div className='summaryTitle'>
@@ -15,14 +16,16 @@ function Summary() {
             </aside>
                 <hr/>
             <aside className='summaryDetails'>
-              <div className='summaryAddons'>
-                <p>Online Services</p>
-                <p>+$10/ye</p>
-              </div>
-              <div className='summaryAddons'>
-                <p>Larger Storage</p>
-                <p>+10/ye</p>
-              </div>  
+              {
+                choosenAddons.map((e:any)=>{
+                  return <>
+                  <div className='summaryAddons'>
+                  <p>{e}</p>
+                  <p>{e.includes('Monthly') && e.includes('Online Services') ? '+$1/mo' : e.includes('Yearly') && e.includes('Online Services')? '+$10/yr' : e.includes('Monthly') ? '+$2/mo' : '+$20/yr' }</p>
+                </div></>
+
+                })
+              }
             </aside>
             
         </section>        

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './Addons.css';
 
-function Addons({setCurrentStep}:any) {
+function Addons({setCurrentStep, setChoosenAddons}:any) {
   const [selectedAddons, setSelectedAddons] = useState<any>([])
   const selectedPlan = localStorage.getItem('duration');
 
@@ -20,6 +20,7 @@ function Addons({setCurrentStep}:any) {
   }
   const handleStep = (option:any)=>{
     if(option == 1){
+      setChoosenAddons(selectedAddons)
       setCurrentStep(4)
     }else if(option == 0){
       setCurrentStep(3)
