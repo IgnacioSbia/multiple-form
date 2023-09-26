@@ -9,7 +9,11 @@ import Summary from "./SummaryStepFour/Summary";
 
 export default function Home() {
   const [currentStep, setCurrentStep] = useState<any>(0);
-  const [choosenAddons, setChoosenAddons] = useState([])
+  const [choosenAddons, setChoosenAddons] = useState([]);
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [selectedPlan, setSelectedPlan] = useState('')
 
   const handleStart = (step:any)=>{
     if(step<1){
