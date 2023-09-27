@@ -80,7 +80,7 @@ export default function Home() {
      </aside>
      <aside>
       { currentStep == 1 ?
-       <YourInfo setCurrentStep= {setCurrentStep}/>
+       <YourInfo setCurrentStep= {setCurrentStep} setNames={setName} setEmails={setEmail} setPhones={setPhone}/>
        : currentStep == 2 ?<SelectPlan setCurrentStep ={setCurrentStep}/>
        : currentStep == 3 ?<Addons setCurrentStep ={setCurrentStep} setChoosenAddons ={setChoosenAddons}/>
        : currentStep == 4 ?<Summary choosenAddons={choosenAddons}/>

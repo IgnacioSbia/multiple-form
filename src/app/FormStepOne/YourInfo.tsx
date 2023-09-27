@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './YourInfo.css'
 
-function YourInfo({setCurrentStep}:any) {
+function YourInfo({setCurrentStep, setNames, setEmails, setPhones}:any) {
    const [name, setName] = useState('');
    const [email, setEmail] = useState('');
    const [number, setNumber] = useState('');
@@ -17,7 +17,10 @@ function YourInfo({setCurrentStep}:any) {
    const nextStep = ()=>{
       //Here should go the validation for the name,mail and phone number
       if(nameReg.test(name) && emailReg.test(email) && phoneReg.test(number)){
-         setCurrentStep(2)
+         setCurrentStep(2);
+         setNames(name);
+         setEmails(email);
+         setPhones(number);
          setEmailErr('');
       }else if(email == ''){
          setEmailErr('This field is required')
