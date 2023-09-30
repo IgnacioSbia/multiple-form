@@ -83,7 +83,7 @@ export default function Home() {
        <YourInfo setCurrentStep= {setCurrentStep} setNames={setName} setEmails={setEmail} setPhones={setPhone}/>
        : currentStep == 2 ?<SelectPlan setCurrentStep ={setCurrentStep} setSelectedsPlan ={setSelectedPlan}/>
        : currentStep == 3 ?<Addons setCurrentStep ={setCurrentStep} setChoosenAddons ={setChoosenAddons}/>
-       : currentStep == 4 ?<Summary choosenAddons={choosenAddons}/>
+       : currentStep == 4 ?<Summary choosenAddons={choosenAddons} name={name} email={email} phone={phone} selectedPlan={selectedPlan}/>
        :
        <>
         <h1>Welcome!</h1>

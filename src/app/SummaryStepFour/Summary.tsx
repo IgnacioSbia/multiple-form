@@ -1,7 +1,10 @@
 import React from 'react'
 import './Summary.css'
-function Summary({choosenAddons}:any) {
+function Summary({choosenAddons, phone, email,name,selectedPlan}:any) {
   
+
+  
+
   return (
     <main>
         <div className='summaryTitle'>
@@ -10,7 +13,7 @@ function Summary({choosenAddons}:any) {
         </div>
         <section className='summaryDetails'>
             <aside className='summaryPlanType'>
-              <h1>Arcade(Yearly)</h1>
+              <h1>{selectedPlan}</h1>
               <button className='summaryButton'>change</button>
 
             </aside>
