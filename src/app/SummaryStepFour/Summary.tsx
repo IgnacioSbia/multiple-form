@@ -4,7 +4,7 @@ function Summary({choosenAddons, phone, email,name,selectedPlan}:any) {
   
 
   
-
+  console.log(selectedPlan)
   return (
     <main>
         <div className='summaryTitle'>

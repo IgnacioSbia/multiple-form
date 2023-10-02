@@ -23,6 +23,7 @@ export default function Home() {
         setCurrentStep(0)
     }
   }
+  console.log(selectedPlan)
   console.log(currentStep)
   return (
 
@@ -81,7 +82,7 @@ export default function Home() {
      <aside>
       { currentStep == 1 ?
        <YourInfo setCurrentStep= {setCurrentStep} setNames={setName} setEmails={setEmail} setPhones={setPhone}/>
-       : currentStep == 2 ?<SelectPlan setCurrentStep ={setCurrentStep} setSelectedsPlan ={setSelectedPlan}/>
+       : currentStep == 2 ?<SelectPlan setCurrentStep ={setCurrentStep} setSelectedsPlans ={setSelectedPlan}/>
        : currentStep == 3 ?<Addons setCurrentStep ={setCurrentStep} setChoosenAddons ={setChoosenAddons}/>
        : currentStep == 4 ?<Summary choosenAddons={choosenAddons} name={name} email={email} phone={phone} selectedPlan={selectedPlan}/>
        :

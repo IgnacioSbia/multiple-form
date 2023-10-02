@@ -5,7 +5,7 @@ import advanced from '../../../public/icon-advanced.svg';
 import pro from '../../../public/icon-pro.svg'
 import './SelectPlan.css';
 
-function SelectPlan({setCurrentStep}:any) {
+function SelectPlan({setCurrentStep, setSelectedsPlans}:any) {
 
   const [selectedPlan, setSelectedPlan] = useState<String>()
   const [durationPlan, setDurationPlan] = useState<String>('Monthly')
@@ -14,6 +14,14 @@ function SelectPlan({setCurrentStep}:any) {
     if(selectedPlan && step == 1){
       localStorage.setItem('duration',durationPlan.toString());
       setCurrentStep(3)
+      if(selectedPlan == 'AdvancedMonthly' || 'AdvancedYearly'){
+        setSelectedsPlans('Advanced')
+      }else if(selectedPlan == 'ArcadeMonthly' || 'ArcadeYearly'){
+        setSelectedsPlans('Arcade')
+      }else{
+        setSelectedsPlans('Pro')
+      }
+      
     }else if(selectedPlan || selectedPlan == null && step == 0){
       setCurrentStep(1)
     }
